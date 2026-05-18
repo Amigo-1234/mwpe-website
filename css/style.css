@@ -1,0 +1,508 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   GLOBAL CONTAINER
+========================= */
+
+.container{
+  width: 100%;
+
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding: 0 40px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+  width: 100%;
+
+  height: 95px;
+
+  position: sticky;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.92);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   NAV CONTAINER
+========================= */
+
+.nav-container{
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo img{
+  width: 165px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
+
+.desktop-nav{
+  display: flex;
+
+  align-items: center;
+
+  gap: 38px;
+}
+
+.desktop-nav a{
+  position: relative;
+
+  text-decoration: none;
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER UNDERLINE */
+
+.desktop-nav a::after{
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0%;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #3b82f6
+  );
+
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover{
+  color: #7c3aed;
+}
+
+.desktop-nav a:hover::after{
+  width: 100%;
+}
+
+/* =========================
+   NAV ACTIONS
+========================= */
+
+.nav-actions{
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+/* =========================
+   ALL NAV BUTTONS
+========================= */
+
+.search-btn,
+.lang-btn,
+.menu-btn{
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.search-btn{
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 20px;
+
+  color: #111827;
+}
+
+.search-btn:hover{
+  background: #f5f5f5;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
+.lang-btn{
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #111827;
+}
+
+.lang-btn:hover{
+  background: #f5f5f5;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-btn{
+  padding: 14px 24px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #3b82f6
+  );
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 30px rgba(124,58,237,0.18);
+}
+
+.menu-btn:hover{
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 35px rgba(59,130,246,0.24);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px){
+
+  .desktop-nav{
+    gap: 24px;
+  }
+
+}
+
+@media (max-width: 992px){
+
+  .desktop-nav{
+    display: none;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  .container{
+    padding: 0 20px;
+  }
+
+  .header{
+    height: 82px;
+  }
+
+  .logo img{
+    width: 140px;
+  }
+
+  .search-btn{
+    display: none;
+  }
+
+  .menu-btn{
+    padding: 12px 18px;
+
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .nav-actions{
+    gap: 10px;
+  }
+
+  .lang-btn{
+    width: 42px;
+    height: 42px;
+
+    font-size: 13px;
+  }
+
+  .menu-btn{
+    padding: 11px 16px;
+  }
+
+}
+
+/* =========================
+   MOBILE MENU OVERLAY
+========================= */
+
+.mobile-menu{
+  position: fixed;
+
+  top: 0;
+  right: -100%;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(255,255,255,0.98);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  z-index: 2000;
+
+  padding: 30px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: right 0.5s ease;
+}
+
+/* ACTIVE MENU */
+
+.mobile-menu.active{
+  right: 0;
+}
+
+/* =========================
+   MOBILE TOP
+========================= */
+
+.mobile-menu-top{
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+/* MOBILE LOGO */
+
+.mobile-logo img{
+  width: 145px;
+}
+
+/* CLOSE BUTTON */
+
+.close-menu-btn{
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f4f4f5;
+
+  font-size: 24px;
+
+  color: #111827;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.close-menu-btn:hover{
+  transform: rotate(90deg);
+}
+
+/* =========================
+   MOBILE LINKS
+========================= */
+
+.mobile-menu-links{
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+.mobile-menu-links a{
+  text-decoration: none;
+
+  font-size: 36px;
+
+  font-weight: 600;
+
+  color: #111827;
+
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-links a:hover{
+  color: #7c3aed;
+
+  transform: translateX(6px);
+}
+
+/* =========================
+   MOBILE BOTTOM
+========================= */
+
+.mobile-menu-bottom{
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.mobile-menu-bottom p{
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #6b7280;
+
+  max-width: 300px;
+}
+
+/* APPLY BUTTON */
+
+.mobile-apply-btn{
+  width: fit-content;
+
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 14px 24px;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #3b82f6
+  );
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(124,58,237,0.18);
+
+  transition: all 0.3s ease;
+}
+
+.mobile-apply-btn:hover{
+  transform: translateY(-3px);
+}
+
+/* =========================
+   HIDE MOBILE MENU ON DESKTOP
+========================= */
+
+@media (min-width: 993px){
+
+  .mobile-menu{
+    display: none;
+  }
+
+}
