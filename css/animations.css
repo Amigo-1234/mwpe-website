@@ -1,0 +1,193 @@
+/* =========================
+   PREMIUM MOTION SYSTEM
+========================= */
+
+.hero-content,
+.hero-image,
+.service-card,
+.floating-card{
+  will-change:
+    transform,
+    opacity;
+}
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.card-one{
+  animation:
+    floatOne 4s ease-in-out infinite;
+}
+
+.card-two{
+  animation:
+    floatTwo 5s ease-in-out infinite;
+}
+
+@keyframes floatOne{
+
+  0%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(-16px)
+      rotate(-2deg);
+  }
+
+  100%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+}
+
+@keyframes floatTwo{
+
+  0%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(16px)
+      rotate(2deg);
+  }
+
+  100%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+}
+
+/* =========================
+   SERVICE CARD HOVER
+========================= */
+
+.service-card{
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.service-card:hover{
+  transform:
+    translateY(-12px)
+    rotateX(4deg)
+    rotateY(-4deg);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   ICON WIGGLE
+========================= */
+
+.service-icon{
+  transition:
+    transform 0.35s ease;
+}
+
+.service-card:hover .service-icon{
+  transform:
+    rotate(-8deg)
+    scale(1.08);
+}
+
+/* =========================
+   BUTTON ENERGY
+========================= */
+
+.primary-btn,
+.secondary-btn{
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+  transform:
+    translateY(-5px)
+    scale(1.03);
+}
+
+/* =========================
+   IMAGE PARALLAX FEEL
+========================= */
+
+.hero-image{
+  transition:
+    transform 0.6s ease;
+}
+
+.hero-image:hover{
+  transform:
+    translateY(-6px)
+    rotate(-1deg);
+}
+
+/* =========================
+   TEXT REVEAL FEEL
+========================= */
+
+.hero-content h1{
+  animation:
+    titleReveal 1.2s ease;
+}
+
+.hero-content p{
+  animation:
+    textReveal 1.5s ease;
+}
+
+@keyframes titleReveal{
+
+  from{
+    opacity: 0;
+
+    transform:
+      translateY(60px)
+      rotate(1deg);
+  }
+
+  to{
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+}
+
+@keyframes textReveal{
+
+  from{
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to{
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}

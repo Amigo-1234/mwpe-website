@@ -186,3 +186,142 @@ body.dark-mode .theme-toggle-btn:hover{
   background:
     rgba(255,255,255,0.1);
 }
+
+/* =========================
+   DARK MODE — SERVICES
+========================= */
+
+body.dark-mode .services{
+  background: #0b1120;
+}
+
+/* =========================
+   SECTION TEXT
+========================= */
+
+body.dark-mode .services-top h2{
+  color: #f9fafb;
+}
+
+body.dark-mode .services-top p{
+  color: #94a3b8;
+}
+
+body.dark-mode .section-tag{
+  background:
+    rgba(124,58,237,0.16);
+
+  color: #a78bfa;
+}
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+body.dark-mode .service-card{
+  background:
+    rgba(15,23,42,0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* CARD HOVER */
+
+body.dark-mode .service-card:hover{
+  border-color:
+    rgba(124,58,237,0.28);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.5);
+}
+
+/* CARD GLOW */
+
+body.dark-mode .service-card::before{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124,58,237,0.12),
+      rgba(59,130,246,0.08)
+    );
+}
+
+/* =========================
+   ICON
+========================= */
+
+body.dark-mode .service-icon{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124,58,237,0.2),
+      rgba(59,130,246,0.18)
+    );
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+body.dark-mode .service-card h3{
+  color: #f9fafb;
+}
+
+body.dark-mode .service-card p{
+  color: #94a3b8;
+}
+
+/* =========================
+   DARK MODE — SKY ANIMATION
+========================= */
+
+/* CLOUDS */
+
+body.dark-mode .cloud{
+  background:
+    rgba(255,255,255,0.08);
+
+  filter: blur(3px);
+}
+
+/* PLANE TRAIL */
+
+body.dark-mode .plane-trail{
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(167,139,250,0.95),
+      rgba(96,165,250,0.85)
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(124,58,237,0.35);
+}
+
+/* SKY ATMOSPHERE */
+
+body.dark-mode .sky-animation::before{
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(124,58,237,0.04),
+      transparent
+    );
+
+  pointer-events: none;
+}
