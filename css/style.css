@@ -559,7 +559,6 @@ body{
   }
 
 }
-
 /* =========================
    HERO SECTION
 ========================= */
@@ -567,12 +566,55 @@ body{
 .hero{
   width: 100%;
 
-  padding:
-    140px 0 100px;
+  padding: 140px 0 100px;
 
   position: relative;
 
   overflow: hidden;
+}
+
+/* HERO BACKGROUND GLOWS */
+
+.hero::before{
+  content: "";
+
+  position: absolute;
+
+  top: -200px;
+  right: -200px;
+
+  width: 500px;
+  height: 500px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124,58,237,0.14),
+      transparent 70%
+    );
+
+  z-index: -1;
+}
+
+.hero::after{
+  content: "";
+
+  position: absolute;
+
+  bottom: -200px;
+  left: -200px;
+
+  width: 450px;
+  height: 450px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,0.12),
+      transparent 70%
+    );
+
+  z-index: -1;
 }
 
 /* =========================
@@ -582,8 +624,7 @@ body{
 .hero-container{
   display: grid;
 
-  grid-template-columns:
-    1.1fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
 
   align-items: center;
 
@@ -600,6 +641,9 @@ body{
   flex-direction: column;
 
   gap: 28px;
+
+  animation:
+    heroFade 1s ease forwards;
 }
 
 /* HERO TAG */
@@ -778,6 +822,36 @@ body{
 
 .hero-image{
   position: relative;
+
+  display: inline-block;
+
+  border-radius: 36px;
+
+  isolation: isolate;
+
+  animation:
+    heroImage 1.2s ease forwards;
+}
+
+/* HERO IMAGE OVERLAY */
+
+.hero-image::after{
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 36px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(17,24,39,0.18),
+      transparent 45%
+    );
+
+  pointer-events: none;
 }
 
 /* HERO IMAGE */
@@ -791,6 +865,8 @@ body{
 
   border-radius: 36px;
 
+  display: block;
+
   box-shadow:
     0 25px 80px rgba(0,0,0,0.12);
 }
@@ -802,12 +878,14 @@ body{
 .floating-card{
   position: absolute;
 
+  z-index: 5;
+
   padding: 16px 22px;
 
   border-radius: 20px;
 
   background:
-    rgba(255,255,255,0.75);
+    rgba(255,255,255,0.78);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -834,15 +912,49 @@ body{
 
 .card-one{
   top: 40px;
-  left: -30px;
+  left: -18px;
 }
 
 .card-two{
-  bottom: 40px;
-  right: -30px;
+  bottom: 24px;
+  right: -18px;
 }
 
-/* FLOAT ANIMATION */
+/* =========================
+   HERO ANIMATIONS
+========================= */
+
+@keyframes heroFade{
+
+  from{
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to{
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes heroImage{
+
+  from{
+    opacity: 0;
+
+    transform: translateX(40px);
+  }
+
+  to{
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+
+}
 
 @keyframes floatCard{
 
@@ -875,8 +987,7 @@ body{
 @media (max-width: 992px){
 
   .hero{
-    padding:
-      120px 0 80px;
+    padding: 120px 0 80px;
   }
 
   .hero-container{
@@ -902,8 +1013,7 @@ body{
 @media (max-width: 768px){
 
   .hero{
-    padding:
-      110px 0 70px;
+    padding: 110px 0 70px;
   }
 
   .hero-content{
@@ -940,6 +1050,10 @@ body{
     border-radius: 28px;
   }
 
+  .hero-image::after{
+    border-radius: 28px;
+  }
+
   .floating-card{
     padding: 14px 18px;
   }
@@ -966,10 +1080,12 @@ body{
   }
 
   .card-one{
+    top: 16px;
     left: 10px;
   }
 
   .card-two{
+    bottom: 16px;
     right: 10px;
   }
 
