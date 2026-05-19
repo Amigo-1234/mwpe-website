@@ -131,3 +131,78 @@ themeToggleBtn.addEventListener(
     }
 
 });
+
+// =========================
+// HERO STATS COUNTER
+// =========================
+
+const counters = document.querySelectorAll(".stat-box h3");
+
+const startCounter = (counter) => {
+
+  const targetText = counter.innerText;
+
+  const target = parseInt(targetText);
+
+  let count = 0;
+
+  const speed = target / 80;
+
+  const updateCounter = () => {
+
+    count += speed;
+
+    if(count < target){
+
+      counter.innerText =
+        Math.floor(count) + "+";
+
+      requestAnimationFrame(updateCounter);
+
+    }else{
+
+      counter.innerText = target + "+";
+
+    }
+
+  };
+
+  updateCounter();
+
+};
+
+/* =========================
+   INTERSECTION OBSERVER
+========================= */
+
+const counterObserver = new IntersectionObserver(
+
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if(entry.isIntersecting){
+
+        startCounter(entry.target);
+
+        counterObserver.unobserve(entry.target);
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold: 0.5
+  }
+
+);
+
+/* OBSERVE ALL COUNTERS */
+
+counters.forEach((counter) => {
+
+  counterObserver.observe(counter);
+
+});
