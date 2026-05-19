@@ -1,0 +1,188 @@
+/* =========================
+   DARK MODE VARIABLES
+========================= */
+
+body.dark-mode{
+
+  background: #0b1120;
+
+  color: #f9fafb;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+body.dark-mode .header{
+
+  background:
+    rgba(10,15,25,0.82);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(18px);
+}
+
+/* =========================
+   DESKTOP NAV LINKS
+========================= */
+
+body.dark-mode .desktop-nav a{
+  color: #f3f4f6;
+}
+
+body.dark-mode .desktop-nav a:hover{
+  color: #8b5cf6;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+body.dark-mode .search-btn,
+body.dark-mode .lang-btn{
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color: #f9fafb;
+}
+
+/* =========================
+   HERO TEXT
+========================= */
+
+body.dark-mode .hero-content h1{
+  color: #ffffff;
+}
+
+body.dark-mode .hero-content p{
+  color: #9ca3af;
+}
+
+/* =========================
+   HERO TAG
+========================= */
+
+body.dark-mode .hero-tag{
+
+  background:
+    rgba(124,58,237,0.16);
+
+  color: #c4b5fd;
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+body.dark-mode .secondary-btn{
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color: #ffffff;
+}
+
+body.dark-mode .secondary-btn:hover{
+
+  border-color: #8b5cf6;
+
+  color: #8b5cf6;
+}
+
+/* =========================
+   STATS
+========================= */
+
+body.dark-mode .stat-box h3{
+  color: #ffffff;
+}
+
+body.dark-mode .stat-box span{
+  color: #9ca3af;
+}
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+body.dark-mode .floating-card{
+
+  background:
+    rgba(17,24,39,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.35);
+}
+
+body.dark-mode .floating-card span{
+  color: #ffffff;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+body.dark-mode .mobile-menu{
+
+  background:
+    rgba(8,12,20,0.96);
+}
+
+body.dark-mode .mobile-menu-links a{
+  color: #ffffff;
+}
+
+body.dark-mode .mobile-menu-bottom p{
+  color: #9ca3af;
+}
+
+body.dark-mode .close-menu-btn{
+
+  background:
+    rgba(255,255,255,0.06);
+
+  color: #ffffff;
+}
+
+/* =========================
+   SCROLLED HEADER
+========================= */
+
+body.dark-mode .header.scrolled{
+
+  background:
+    rgba(7,10,18,0.88);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+
+body.dark-mode .theme-toggle-btn{
+
+  background:
+    rgba(255,255,255,0.06);
+
+  color: #ffffff;
+}
+
+body.dark-mode .theme-toggle-btn:hover{
+
+  background:
+    rgba(255,255,255,0.1);
+}
