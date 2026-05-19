@@ -597,33 +597,62 @@ document.querySelectorAll(".service-card")
 
 });
 
+
+
+
 // =========================
-// DESTINATION HORIZONTAL
+// DESTINATION SLIDER
 // =========================
 
-gsap.to(".destination-track",{
+const destinationTrack =
+  document.querySelector(
+    ".destination-track"
+  );
 
-  x: () =>
-    -(document.querySelector(".destination-track").scrollWidth - window.innerWidth + 100),
+const nextDestination =
+  document.querySelector(
+    ".next-destination"
+  );
 
-  ease: "none",
+const prevDestination =
+  document.querySelector(
+    ".prev-destination"
+  );
 
-  scrollTrigger:{
-    trigger: ".destinations",
+// NEXT
 
-    start: "top top",
+nextDestination.addEventListener(
+  "click",
+  () => {
 
-    end: "+=2200",
+    destinationTrack.scrollBy({
 
-    scrub: 1.2,
+      left: 460,
 
-    pin: true,
-  }
+      behavior: "smooth"
+
+    });
+
+});
+
+// PREVIOUS
+
+prevDestination.addEventListener(
+  "click",
+  () => {
+
+    destinationTrack.scrollBy({
+
+      left: -460,
+
+      behavior: "smooth"
+
+    });
 
 });
 
 // =========================
-// DESTINATION REVEAL
+// DESTINATION CARD REVEAL
 // =========================
 
 gsap.from(".destination-card",{
@@ -636,19 +665,19 @@ gsap.from(".destination-card",{
 
   opacity: 0,
 
-  y: 120,
+  y: 100,
 
-  scale: 0.9,
+  scale: 0.92,
 
-  stagger: 0.16,
+  stagger: 0.15,
 
-  duration: 1.4,
+  duration: 1.2,
 
   ease: "power4.out"
 });
 
 // =========================
-// IMAGE PARALLAX
+// DESTINATION IMAGE PARALLAX
 // =========================
 
 gsap.utils.toArray(".destination-card img")
@@ -656,7 +685,7 @@ gsap.utils.toArray(".destination-card img")
 
   gsap.to(image,{
 
-    yPercent: -12,
+    scale: 1.12,
 
     ease: "none",
 

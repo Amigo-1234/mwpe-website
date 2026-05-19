@@ -1980,6 +1980,8 @@ body,
 .destination-card{
   position: relative;
 
+  min-width: 430px;
+
   width: 430px;
 
   height: 620px;
@@ -2121,4 +2123,125 @@ body,
     font-size: 28px;
   }
 
+}
+
+/* =========================
+   DESTINATION CONTROLS
+========================= */
+
+.destination-controls{
+  width: 100%;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding-right: 40px;
+
+  margin-bottom: 34px;
+}
+
+/* =========================
+   ARROWS
+========================= */
+
+.destination-arrow{
+  width: 62px;
+  height: 62px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #111827;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.08);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.destination-arrow:hover{
+  transform:
+    translateY(-4px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #3b82f6
+    );
+
+  color: white;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+  .destination-controls{
+    padding-right: 20px;
+
+    margin-bottom: 24px;
+  }
+
+  .destination-arrow{
+    width: 54px;
+    height: 54px;
+
+    font-size: 20px;
+  }
+
+}
+
+.destination-track{
+  display: flex;
+
+  gap: 32px;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  width: 100%;
+
+  padding: 0 40px 20px;
+
+  white-space: nowrap;
+}
+
+.destination-track::-webkit-scrollbar{
+  display: none;
+}
+
+.destination-card{
+  flex-shrink: 0;
+}
+.destinations{
+  overflow: hidden;
 }

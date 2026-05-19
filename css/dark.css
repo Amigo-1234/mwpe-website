@@ -325,3 +325,73 @@ body.dark-mode .sky-animation::before{
 
   pointer-events: none;
 }
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .destinations{
+  background: #070b17;
+}
+
+body.dark-mode .destinations-top h2{
+  color: white;
+}
+
+body.dark-mode .destinations-top p{
+  color:
+    rgba(255,255,255,0.7);
+}
+
+body.dark-mode .destination-card{
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+}
+
+body.dark-mode .destination-overlay{
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.88),
+      rgba(0,0,0,0.24),
+      transparent
+    );
+}
+
+body.dark-mode .destination-arrow{
+  background:
+    rgba(255,255,255,0.06);
+
+  color: white;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode .destination-arrow:hover{
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #3b82f6
+    );
+}
+
+/* =========================
+   HIDE SCROLLBAR
+========================= */
+
+.destination-track{
+  overflow-x: auto;
+
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+}
+
+.destination-track::-webkit-scrollbar{
+  display: none;
+}
