@@ -81,7 +81,7 @@ body{
 ========================= */
 
 .logo img{
-  width: 100px;
+  width: 145px;
 
   object-fit: contain;
 }
@@ -294,7 +294,7 @@ body{
   }
 
   .logo img{
-    width: 85px;
+    width: 145px;
   }
 
   .search-btn{
@@ -395,7 +395,7 @@ body{
 /* MOBILE LOGO */
 
 .mobile-logo img{
-  width: 110px;
+  width: 145px;
 }
 
 /* CLOSE BUTTON */
