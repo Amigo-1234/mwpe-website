@@ -1916,3 +1916,209 @@ body,
   }
 
 }
+
+/* =========================
+   DESTINATIONS SECTION
+========================= */
+
+.destinations{
+  position: relative;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+}
+
+/* =========================
+   SECTION TOP
+========================= */
+
+.destinations-top{
+  max-width: 760px;
+
+  margin-bottom: 70px;
+}
+
+.destinations-top h2{
+  font-size: 58px;
+
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+
+  color: #111827;
+
+  margin-bottom: 24px;
+}
+
+.destinations-top p{
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  color: #6b7280;
+}
+
+/* =========================
+   TRACK
+========================= */
+
+.destination-track{
+  display: flex;
+
+  gap: 32px;
+
+  padding-left: 40px;
+
+  width: max-content;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.destination-card{
+  position: relative;
+
+  width: 430px;
+
+  height: 620px;
+
+  border-radius: 36px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  background: #000;
+
+  will-change:
+    transform;
+}
+
+/* IMAGE */
+
+.destination-card img{
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease;
+}
+
+/* OVERLAY */
+
+.destination-overlay{
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 40px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.72),
+      rgba(0,0,0,0.12),
+      transparent
+    );
+}
+
+/* COUNTRY */
+
+.destination-overlay span{
+  font-size: 14px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.7);
+
+  margin-bottom: 14px;
+}
+
+/* TITLE */
+
+.destination-overlay h3{
+  font-size: 36px;
+
+  line-height: 1.1;
+
+  color: white;
+
+  margin-bottom: 16px;
+}
+
+/* TEXT */
+
+.destination-overlay p{
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.82);
+
+  max-width: 320px;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.destination-card:hover img{
+  transform:
+    scale(1.08);
+}
+
+.destination-card:hover{
+  transform:
+    translateY(-10px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+  .destinations{
+    padding: 100px 0;
+  }
+
+  .destinations-top h2{
+    font-size: 42px;
+  }
+
+  .destination-track{
+    gap: 20px;
+
+    padding-left: 20px;
+  }
+
+  .destination-card{
+    width: 300px;
+
+    height: 460px;
+  }
+
+  .destination-overlay{
+    padding: 28px;
+  }
+
+  .destination-overlay h3{
+    font-size: 28px;
+  }
+
+}

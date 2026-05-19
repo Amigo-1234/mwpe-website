@@ -596,3 +596,76 @@ document.querySelectorAll(".service-card")
   });
 
 });
+
+// =========================
+// DESTINATION HORIZONTAL
+// =========================
+
+gsap.to(".destination-track",{
+
+  x: () =>
+    -(document.querySelector(".destination-track").scrollWidth - window.innerWidth + 100),
+
+  ease: "none",
+
+  scrollTrigger:{
+    trigger: ".destinations",
+
+    start: "top top",
+
+    end: "+=2200",
+
+    scrub: 1.2,
+
+    pin: true,
+  }
+
+});
+
+// =========================
+// DESTINATION REVEAL
+// =========================
+
+gsap.from(".destination-card",{
+
+  scrollTrigger:{
+    trigger: ".destinations",
+
+    start: "top 80%",
+  },
+
+  opacity: 0,
+
+  y: 120,
+
+  scale: 0.9,
+
+  stagger: 0.16,
+
+  duration: 1.4,
+
+  ease: "power4.out"
+});
+
+// =========================
+// IMAGE PARALLAX
+// =========================
+
+gsap.utils.toArray(".destination-card img")
+.forEach((image)=>{
+
+  gsap.to(image,{
+
+    yPercent: -12,
+
+    ease: "none",
+
+    scrollTrigger:{
+      trigger: image,
+
+      scrub: true
+    }
+
+  });
+
+});
