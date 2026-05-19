@@ -659,7 +659,7 @@ body,
 .hero{
   width: 100%;
 
-  padding: 140px 0 100px;
+  padding: 260px 0 100px;
 
   position: relative;
 
@@ -1219,4 +1219,228 @@ body,
   opacity: 1;
 
   transform: translateY(0);
+}
+
+/* =========================
+   SKY ANIMATION
+========================= */
+
+.sky-animation{
+  position: absolute;
+
+  top: 70px;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 170px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* =========================
+   PLANE
+========================= */
+
+.plane{
+  position: absolute;
+
+  top: 18px;
+
+  left: -220px;
+
+  width: 130px;
+
+  opacity: 0.96;
+
+  z-index: 3;
+
+  animation:
+    flyPlane 22s linear infinite;
+}
+
+/* =========================
+   WORD TRAIL
+========================= */
+
+.plane-trail{
+  position: absolute;
+
+  top: 58px;
+
+  left: -1200px;
+
+  white-space: nowrap;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  color: rgba(124,58,237,0.58);
+
+  text-shadow:
+    0 0 12px rgba(124,58,237,0.18);
+
+  animation:
+    trailMove 22s linear infinite;
+
+  z-index: 1;
+
+      background:
+    linear-gradient(
+    90deg,
+    rgba(124,58,237,0.85),
+    rgba(59,130,246,0.65)
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+  
+}
+
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud{
+  position: absolute;
+
+  background:
+    rgba(255,255,255,0.55);
+
+  border-radius: 999px;
+
+  filter: blur(2px);
+}
+
+/* CLOUD ONE */
+
+.cloud-one{
+  width: 140px;
+  height: 48px;
+
+  top: 8px;
+  left: 12%;
+
+  animation:
+    cloudMove 24s linear infinite;
+}
+
+/* CLOUD TWO */
+
+.cloud-two{
+  width: 110px;
+  height: 40px;
+
+  top: 90px;
+  left: 58%;
+
+  animation:
+    cloudMove 30s linear infinite;
+}
+
+/* CLOUD THREE */
+
+.cloud-three{
+  width: 160px;
+  height: 52px;
+
+  top: 30px;
+  left: 82%;
+
+  animation:
+    cloudMove 34s linear infinite;
+}
+
+/* =========================
+   PLANE ANIMATION
+========================= */
+
+@keyframes flyPlane{
+
+  0%{
+    transform:
+      translateX(0)
+      translateY(0)
+      rotate(2deg);
+
+    opacity: 0;
+  }
+
+  5%{
+    opacity: 1;
+  }
+
+  50%{
+    transform:
+      translateX(60vw)
+      translateY(-8px)
+      rotate(1deg);
+  }
+
+  100%{
+    transform:
+      translateX(135vw)
+      translateY(-20px)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+}
+
+/* =========================
+   TRAIL ANIMATION
+========================= */
+
+@keyframes trailMove{
+
+  0%{
+    transform: translateX(0);
+
+    opacity: 0;
+  }
+
+  5%{
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateX(135vw);
+
+    opacity: 0;
+  }
+
+}
+
+/* =========================
+   CLOUD FLOAT
+========================= */
+
+@keyframes cloudMove{
+
+  0%{
+    transform: translateX(0);
+  }
+
+  50%{
+    transform: translateX(20px);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+
 }
