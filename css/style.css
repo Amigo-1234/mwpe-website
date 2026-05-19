@@ -1734,3 +1734,145 @@ body,
     translateZ(0);
 }
 
+/* =========================
+   PREMIUM SERVICES MOTION
+========================= */
+
+.services-grid{
+  perspective: 1400px;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card{
+  position: relative;
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  will-change:
+    transform,
+    opacity;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+/* =========================
+   GLOW LAYER
+========================= */
+
+.service-glow{
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(124,58,237,0.14),
+      transparent 45%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.5s ease;
+}
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.service-card:hover{
+  transform:
+    translateY(-14px)
+    rotateX(2deg)
+    rotateY(-2deg);
+
+  border-color:
+    rgba(124,58,237,0.14);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.08);
+}
+
+.service-card:hover .service-glow{
+  opacity: 1;
+}
+
+/* =========================
+   ICON DEPTH
+========================= */
+
+.service-icon{
+  position: relative;
+
+  z-index: 2;
+
+  transition:
+    transform 0.45s ease;
+}
+
+.service-card:hover .service-icon{
+  transform:
+    translateY(-4px)
+    scale(1.06);
+}
+
+/* =========================
+   TEXT TRANSITIONS
+========================= */
+
+.service-card h3,
+.service-card p{
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================
+   PARALLAX OVERLAY
+========================= */
+
+.service-card::after{
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.06),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.45s ease;
+}
+
+.service-card:hover::after{
+  opacity: 1;
+}
+
+/* =========================
+   PREMIUM RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+  .service-card:hover{
+    transform:
+      translateY(-8px);
+  }
+
+}

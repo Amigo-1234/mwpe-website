@@ -426,3 +426,173 @@ gsap.to(".floating-card",{
 
   stagger:0.3
 });
+
+// =========================
+// SERVICES PREMIUM REVEAL
+// =========================
+
+gsap.from(".service-card",{
+
+  scrollTrigger:{
+    trigger: ".services-grid",
+
+    start: "top 78%",
+  },
+
+  opacity: 0,
+
+  y: 80,
+
+  scale: 0.92,
+
+  stagger: 0.14,
+
+  duration: 1.2,
+
+  ease: "power4.out"
+});
+
+// =========================
+// SERVICES TEXT REVEAL
+// =========================
+
+gsap.from(".service-card h3",{
+
+  scrollTrigger:{
+    trigger: ".services-grid",
+
+    start: "top 75%",
+  },
+
+  opacity: 0,
+
+  y: 30,
+
+  stagger: 0.1,
+
+  duration: 0.9,
+
+  ease: "power3.out"
+});
+
+gsap.from(".service-card p",{
+
+  scrollTrigger:{
+    trigger: ".services-grid",
+
+    start: "top 72%",
+  },
+
+  opacity: 0,
+
+  y: 20,
+
+  stagger: 0.08,
+
+  duration: 0.8,
+
+  delay: 0.1,
+
+  ease: "power2.out"
+});
+
+// =========================
+// ICON FLOAT ON SCROLL
+// =========================
+
+gsap.to(".service-icon",{
+
+  y: -10,
+
+  duration: 2,
+
+  repeat: -1,
+
+  yoyo: true,
+
+  ease: "sine.inOut",
+
+  stagger: 0.2
+});
+
+// =========================
+// PARALLAX DEPTH
+// =========================
+
+gsap.to(".service-card",{
+
+  yPercent: -8,
+
+  ease: "none",
+
+  scrollTrigger:{
+    trigger: ".services",
+
+    start: "top bottom",
+
+    end: "bottom top",
+
+    scrub: 1.2
+  }
+
+});
+
+// =========================
+// PREMIUM TILT INTERACTION
+// =========================
+
+document.querySelectorAll(".service-card")
+.forEach((card)=>{
+
+  card.addEventListener(
+    "mousemove",
+    (e)=>{
+
+      const rect =
+        card.getBoundingClientRect();
+
+      const x =
+        e.clientX - rect.left;
+
+      const y =
+        e.clientY - rect.top;
+
+      const rotateY =
+        ((x / rect.width)-0.5)*8;
+
+      const rotateX =
+        ((y / rect.height)-0.5)*-8;
+
+      gsap.to(card,{
+
+        rotateY,
+
+        rotateX,
+
+        transformPerspective: 1200,
+
+        duration: 0.5,
+
+        ease: "power2.out"
+      });
+
+  });
+
+  card.addEventListener(
+    "mouseleave",
+    ()=>{
+
+      gsap.to(card,{
+
+        rotateX:0,
+
+        rotateY:0,
+
+        duration:0.7,
+
+        ease:"expo.out"
+      });
+
+  });
+
+});
